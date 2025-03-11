@@ -1,0 +1,60 @@
+//Crear la tabla con todos los campos del archivo 'players-performance.csv'
+CREATE TABLE IF NOT EXISTS players_performance (
+    ID INT,
+    slug STRING,
+    equipo_id STRING,
+    semana INT,
+    puntos_totales INT,
+    min_jugados INT,
+    goles INT,
+    asistencias_gol INT,
+    asistencias_sin_gol INT,
+    llegadas_area INT,
+    penaltis_provocados INT,
+    penaltis_parados INT,
+    paradas INT,
+    despejes INT,
+    penaltis_fallados INT,
+    goles_en_propia INT,
+    goles_en_contra INT,
+    tarjetas_amarillas INT,
+    segundas_amarillas INT,
+    tarjetas_rojas INT,
+    tiros_a_puerta INT,
+    regates INT,
+    balones_recuperados INT,
+    posesiones_perdidas INT,
+    puntos_marca INT,
+    min_jugados_puntos INT,
+    goles_puntos INT,
+    asistencias_gol_puntos INT,
+    asistencias_sin_gol_puntos INT,
+    llegadas_area_puntos INT,
+    penaltis_provocados_puntos INT,
+    penaltis_parados_puntos INT,
+    paradas_puntos INT,
+    despejes_puntos INT,
+    penaltis_fallados_puntos INT,
+    goles_en_propia_puntos INT,
+    goles_en_contra_puntos INT,
+    tarjetas_amarillas_puntos INT,
+    segundas_amarillas_puntos INT,
+    tarjetas_rojas_puntos INT,
+    tiros_a_puerta_puntos INT,
+    regates_puntos INT,
+    balones_recuperados_puntos INT,
+    posesiones_perdidas_puntos INT,
+    puntos_marca_puntos INT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','  -- Usa '\t' si es tabulador, cambia a ',' si es CSV con comas
+STORED AS TEXTFILE;
+
+//Cargar datos
+LOAD DATA INPATH '/data/fantasy/laliga/players-performance.csv' INTO TABLE players_performance;
+
+
+
+
+
+

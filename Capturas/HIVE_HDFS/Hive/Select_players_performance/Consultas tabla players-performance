@@ -1,0 +1,29 @@
+
+//Top 5 jugadores por Nº de despejes
+SELECT ID, SLUG AS JUGADOR, SUM(DESPEJES) AS TOTAL_DESPEJES
+FROM players_performance
+GROUP BY ID, SLUG
+ORDER BY TOTAL_DESPEJES DESC
+LIMIT 5;
+
+//Top 5 jugadores por Nº de tarjetas amarillas
+SELECT ID, SLUG AS JUGADOR, SUM(TARJETAS_AMARILLAS) AS TOTAL_AMARILLAS
+FROM players_performance
+GROUP BY ID, SLUG
+ORDER BY TOTAL_AMARILLAS DESC
+LIMIT 5;
+
+//Top 10 jugadores por minutos totales
+SELECT ID, slug AS JUGADOR, SUM(min_jugados) AS total_minutos
+FROM players_performance
+GROUP BY ID, slug
+ORDER BY total_minutos DESC
+LIMIT 10;
+
+//Top 10 jugadores por promedio puntos marca
+SELECT ID, slug AS JUGADOR, AVG(puntos_marca_puntos) AS media_puntos_marca
+FROM players_performance
+GROUP BY ID, slug
+ORDER BY media_puntos_marca DESC
+LIMIT 10;
+

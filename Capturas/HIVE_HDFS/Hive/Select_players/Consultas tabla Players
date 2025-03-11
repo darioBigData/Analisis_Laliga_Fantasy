@@ -1,0 +1,37 @@
+
+//Promedio puntos por posición
+SELECT POSICION, AVG(PUNTOS_MEDIA) AS PROMEDIO_PUNTOS
+FROM players
+GROUP BY POSICION
+ORDER BY PROMEDIO_PUNTOS DESC;
+
+//Media de puntos de todos los jugadores
+SELECT AVG(PUNTOS_MEDIA) AS media_puntos
+FROM players;
+
+//Puntos totales por equipo
+SELECT EQUIPO_ID, SUM(PUNTOS) AS PUNTOS_TOTALES
+FROM players
+GROUP BY EQUIPO_ID
+ORDER BY PUNTOS_TOTALES DESC;
+
+
+//Top 15 jugadores con más media
+SELECT NOMBRE, EQUIPO_ID, PUNTOS_MEDIA, VALOR_MERCADO
+FROM players
+ORDER BY PUNTOS_MEDIA DESC
+LIMIT 15;
+
+//Top 15 jugadores con mas puntos totales
+SELECT NOMBRE, EQUIPO_ID, PUNTOS
+FROM players
+ORDER BY PUNTOS DESC
+LIMIT 15;
+
+//Top 15 Jugadores por valor de mercado
+SELECT NOMBRE, EQUIPO_ID, VALOR_MERCADO
+FROM players
+ORDER BY VALOR_MERCADO DESC
+LIMIT 15;
+
+
